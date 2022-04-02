@@ -100,7 +100,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	</div>
 	<tw-storydata name="final-clue" startnode="1" creator="Twine" creator-version="2.3.14" ifid="06E0BB0E-E0DB-463D-A822-87FD527EF1B8" zoom="1" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.alert {
   font-size: 75%;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="TODO" color="red"></tw-tag>,<tw-tag name="ending" color="blue"></tw-tag>,<tw-tag name="final" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="474,234" size="100,100">The art, academic and wealth circles in the city are teeming with the news: the famous exuberant (and expensive, and historical, all those things) Bonaparte diamonds are missing. 
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="TODO" color="red"></tw-tag>,<tw-tag name="ending" color="blue"></tw-tag>,<tw-tag name="final" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="471,198" size="100,100">The art, academic and wealth circles in the city are teeming with the news: the famous exuberant (and expensive, and historical, all those things) Bonaparte diamonds are missing. 
 
 On display on a private exhibition for this week only after many disagreements over the date, place and possible invitees, the jewelry went missing in the second day of display, but no one noticed until the morning after.
 
@@ -114,7 +114,6 @@ But I don&#39;t need to be telling you: you know all that. You are the one who s
 &lt;&lt;set $has_money to false&gt;&gt;
 &lt;&lt;set $has_diamonds to false&gt;&gt;
 &lt;&lt;set $has_ticket to false&gt;&gt;
-&lt;&lt;set $timer to Date.now()&gt;&gt;
 
 &lt;&lt;set $good_events = [
 &quot;Intense rain is making traffic heavier, even for the police. This will slow down their investigations.&quot;, 
@@ -126,7 +125,19 @@ But I don&#39;t need to be telling you: you know all that. You are the one who s
 &quot;The museum found at least one camera that was working in the time of the crime. The images have the potential to lead to the robber.&quot;,
 &quot;After further research, a new witness went to the police with a shorter list of people that were in the exhibition in the crime afternoon.&quot;,
 &quot;A new piece of evidence has been found. The police is getting closer to the actual criminal.&quot;,
-&quot;A few people at work were discussing you looked weird during the last weeks. Like if you were planning something.&quot;]&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="credits" tags="TODO" position="709,54" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="4" name="ending-you-win-escape" tags="TODO ending" position="1693,404" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="5" name="ending-preventive-detention" tags="ending TODO" position="1693,519" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="6" name="ending-clue-found" tags="ending TODO" position="1692,635" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="7" name="obstacle-interrogation" tags="TODO" position="1005,864" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="8" name="obstacle-fingerprint-collection" tags="TODO" position="1001,744" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="9" name="obstacle-police-call" tags="TODO" position="1128,746" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="10" name="obstacle-family-event" tags="TODO" position="1131,863" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="task-buy-ticket" tags="TODO" position="712,723" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="12" name="task-hide-jewelry" tags="TODO" position="710,480" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="task-pickup-jewelry" tags="TODO" position="1124,443" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="14" name="prologue" tags="TODO" position="478,388" size="100,100">(...)
+&quot;A few people at work were discussing you looked weird during the last weeks. Like if you were planning something.&quot;]&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="credits" tags="" position="709,54" size="100,100">&lt;div align=&quot;center&quot;&gt;[img[&quot;images/puzzle-logo.png&quot;]]&lt;/div&gt;
+&#39;&#39;The Final Clue&#39;&#39; is an interactive fiction piece created by Mírian Bruckschen Motta Barros during [[Ludum Dare 50|https://ldjam.com/]] using Twine 2.1 with Sugarcube 2.34.1.
+
+All icons are public domain, from https://openclipart.org
+All sounds are also public domain (CC 0), from https://freesound.org
+
+Version: 0.1.
+&lt;&lt;set $has_forged_docs to false&gt;&gt;\
+&lt;&lt;set $has_money to false&gt;&gt;\
+&lt;&lt;set $has_diamonds to false&gt;&gt;\
+&lt;&lt;set $has_ticket to false&gt;&gt;\
+
+[[&quot;Take me back, I want to play!&quot;-&gt;Start]]</tw-passagedata><tw-passagedata pid="4" name="ending-you-win-escape" tags="TODO ending" position="1693,404" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="5" name="ending-preventive-detention" tags="ending TODO" position="1693,519" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="6" name="ending-clue-found" tags="ending TODO" position="1692,635" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="7" name="obstacle-interrogation" tags="TODO" position="1005,864" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="8" name="obstacle-fingerprint-collection" tags="TODO" position="1001,744" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="9" name="obstacle-police-call" tags="TODO" position="1128,746" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="10" name="obstacle-family-event" tags="TODO" position="1131,863" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="task-buy-ticket" tags="TODO" position="712,723" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="12" name="task-hide-jewelry" tags="TODO" position="710,480" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="task-pickup-jewelry" tags="TODO" position="1124,443" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="14" name="prologue" tags="TODO" position="478,388" size="100,100">(...)
 
 When you are finally back from memory lane, you find yourself seating in your kitchen. Now it&#39;s time to [[plan your next steps-&gt;plan-next-steps]]. </tw-passagedata><tw-passagedata pid="15" name="task-sell-jewelry" tags="TODO" position="1245,317" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="16" name="plan-next-steps" tags="" position="475,551" size="100,100">Regardless of what you will do after, being in jail reduces your options significatively, so you&#39;d rather avoid it.
 
