@@ -100,6 +100,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	</div>
 	<tw-storydata name="final-clue" startnode="1" creator="Twine" creator-version="2.3.14" ifid="06E0BB0E-E0DB-463D-A822-87FD527EF1B8" zoom="0.6" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.alert {
   font-size: 75%;
+  color: slategray;
 }
 
 #ui-bar { 
@@ -138,7 +139,8 @@ body.preventive {
   background-size: cover;
 }
 
-a.endings { color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="TODO" color="red"></tw-tag>,<tw-tag name="ending" color="yellow"></tw-tag>,<tw-tag name="final" color="blue"></tw-tag>,<tw-tag name="jail" color="yellow"></tw-tag>,<tw-tag name="preventive" color="yellow"></tw-tag>,<tw-tag name="you-win" color="blue"></tw-tag>,<tw-tag name="youwin" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="310,278" size="100,100">&lt;&lt;audio mainsong volume 0.2 loop play&gt;&gt;\
+a.endings { color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="TODO" color="red"></tw-tag>,<tw-tag name="ending" color="yellow"></tw-tag>,<tw-tag name="final" color="blue"></tw-tag>,<tw-tag name="jail" color="yellow"></tw-tag>,<tw-tag name="preventive" color="yellow"></tw-tag>,<tw-tag name="you-win" color="blue"></tw-tag>,<tw-tag name="youwin" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="311.6666666666667,278" size="100,100">&lt;&lt;audio mainsong volume 0.2 loop play&gt;&gt;\
+&lt;div align=&quot;center&quot;&gt;[img[&quot;images/puzzle-logo.png&quot;]]&lt;/div&gt;
 The art, academic and wealth circles in the city are teeming with the news: the famous exuberant (and expensive, and historical, all those things) Bonaparte diamonds are missing. 
 
 On display on a private exhibition for this week only after many disagreements over the date, place and possible invitees, the jewelry went missing in the second day of display, but no one noticed until the morning after.
@@ -152,8 +154,11 @@ You are the one who stole the diamonds, after all.
 In a whim, you could say that, but you&#39;re not going back now. And you&#39;re on the run.
 
 [[Let&#39;s go then!-&gt;prologue]]
-[[I already know the backstory... Is there any way I can skip it now?-&gt;plan-next-steps2]]
+[[I already know the backstory... Is there any way I can skip it?-&gt;plan-next-steps2]]
 [[I&#39;m not much into detective stories, sorry. Where&#39;s the exit?-&gt;credits]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="50.33333333333333,128.33333333333331" size="100,100">&lt;&lt;cacheaudio &quot;mainsong&quot; &quot;audio/soundtrack.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;alert&quot; &quot;audio/alert.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;danger&quot; &quot;audio/danger.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;yay&quot; &quot;audio/yay.mp3&quot;&gt;&gt;
 
 &lt;&lt;set $has_forged_docs to false&gt;&gt;
 &lt;&lt;set $has_money to false&gt;&gt;
@@ -170,16 +175,16 @@ In a whim, you could say that, but you&#39;re not going back now. And you&#39;re
 &lt;&lt;set $good_events = [
 &quot;Intense rain is making traffic heavier, even for the police. This will slow down their investigations.&quot;, 
 &quot;A witness has been caught lying during their interrogation, so the police now has one more suspect to investigate.&quot;,
-&quot;An earthquake tombed down part of the police force evidence locker, damaging much of the stuff there. Part of their evidence on the case was lost.&quot;,
+&quot;A natural disaster tombed down part of the police force evidence rooms, damaging much of the stuff there. Part of their evidence on the case was lost.&quot;,
 &quot;The case detective has suffered a car accident and is now recovering. The substitute will take some time to catch up.&quot;,
 &quot;The biggest scandal on the police force just came out and everybody in the organization is trying to put that fire down. All investigations are slowed down. Good for you!&quot;]&gt;&gt;
 
 &lt;&lt;set $bad_events = [
-&quot;The museum found at least one camera that was working in the time of the crime. The images have the potential to lead to the robber.&quot;,
-&quot;After further research, a new witness went to the police with a shorter list of people that were in the exhibition in the crime afternoon.&quot;,
+&quot;The museum found at least one camera that was working at the time of the crime. The images have the potential to lead to the robber.&quot;,
+&quot;A new witness went to the police with a shorter list of people that were in the exhibition in the crime afternoon.&quot;,
 &quot;A new piece of evidence has been found. The police is getting closer to the actual criminal.&quot;,
 &quot;A few people at work were discussing you looked weird during the last weeks. Like if you were planning something.&quot;,
-&quot;The robbery case was re-assigned to a very experienced team that has dealt with art theft before. These guys are FAST. No so good for you...&quot;]&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="credits" tags="" position="317,125" size="100,100">&lt;div align=&quot;center&quot;&gt;[img[&quot;images/puzzle-logo.png&quot;]]&lt;/div&gt;
+&quot;The case was re-assigned to a very experienced team that has dealt with art theft before. These guys are FAST. No so good for you...&quot;]&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="credits" tags="" position="317,125" size="100,100">&lt;div align=&quot;center&quot;&gt;[img[&quot;images/puzzle-logo.png&quot;]]&lt;/div&gt;
 &#39;&#39;The Final Clue&#39;&#39; is an interactive fiction piece created by Mírian Bruckschen Motta Barros during [[Ludum Dare 50|https://ldjam.com/]] using Twine 2.1 with Sugarcube 2.34.1.
 
 All icons are public domain, from [[OpenClipart|https://openclipart.org]].
@@ -270,7 +275,7 @@ The place has been inspected, you can tell that. All the glass containers are go
 There&#39;s only one way to be sure. You need to find a way of destructing those glasses. It&#39;s risky but it&#39;s inevitable they will trace the fingerprints to you.
 
 [[You head to the police station, trying to figure out a way to get in without being noticed.-&gt;go-to-police-station]] </tw-passagedata><tw-passagedata pid="18" name="task-make-new-docs" tags="" position="792,618" size="100,100">&lt;&lt;set $ordered_docs to true&gt;&gt;&lt;&lt;set $start_time_docs to Date.now()&gt;&gt;\
-You call the number your mystery contact gave you and tell the person what you need. They already knew, it seemed to you. 
+You call the number your mystery contact gave you and tell the person what you need. They already knew you were going to call, it seemed.
 
 The call is surprisingly short. You have asked if you could choose your new name. You were thinking something along the lines of Bond, James Bond...
 
@@ -300,13 +305,18 @@ You didn&#39;t have much time to say anything, but what was there to say anyway?
 		&lt;&lt;set $random_event to either(&quot;nothing&quot;, &quot;nothing&quot;, &quot;good&quot;, &quot;bad&quot;)&gt;&gt;
 		&lt;&lt;if $random_event eq &quot;good&quot;&gt;&gt;
 		    &lt;&lt;set _text to either($good_events)&gt;&gt;
-			&lt;&lt;replace &quot;#event&quot;&gt;&gt;Good: _text&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;audio yay play&gt;&gt;
+			&lt;&lt;replace &quot;#event&quot;&gt;&gt;[img[&quot;images/thumbsup.png&quot;]] _text&lt;&lt;/replace&gt;&gt;
 		&lt;&lt;elseif $random_event eq &quot;bad&quot;&gt;&gt;
 		    &lt;&lt;set _text to either($bad_events)&gt;&gt;
-			&lt;&lt;replace &quot;#event&quot;&gt;&gt;Bad: _text&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;audio alert play&gt;&gt;
 			&lt;&lt;set $evidences += 1&gt;&gt;
+			&lt;&lt;if $evidences gt 2&gt;&gt;\
+			&lt;&lt;audio danger play&gt;&gt;
+			&lt;&lt;set _text to _text + &quot; &lt;b&gt;The police is now real close! Try to delay them!&lt;/b&gt;&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
+			&lt;&lt;replace &quot;#event&quot;&gt;&gt;[img[&quot;images/thumbsdown.png&quot;]]  _text&lt;&lt;/replace&gt;&gt;
 		&lt;&lt;else&gt;&gt;
-			&lt;&lt;replace &quot;#event&quot;&gt;&gt;No news is good news!&lt;&lt;/replace&gt;&gt;
+			&lt;&lt;replace &quot;#event&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/repeat&gt;&gt;&lt;&lt;/silently&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="prologue2" tags="" position="209.66666666666666,600.3333333333334" size="100,100">The mystery contact very quickly gained your trust and convinced you that it could be a good idea to do this thing. The money was good, but you would have to get a new life after that: there&#39;s no way you could hide your gains for long. And what would be the point, anyway?
@@ -387,7 +397,7 @@ Surprisingly (and happily), you find what you are looking for. You can see by th
 
 Is there any way you can delay it? Just until you&#39;re gone?
 
-You start to think about a few ideas that might help. You&#39;ll be back to them in due time.-&gt;is-good-to-go
+You start to think about a few ideas that might help. You&#39;ll be back to them in due time.
 
 You leave the precint discreetly but wave a goodbye for the sympathetic receptionist. It may be a good thing to have a friend in this place. On the other hand, he may remember you in the future -- you may be asked what were you doing there, dangerous things like that. You hope this doesn&#39;t come to hunt you afterwards.
 
