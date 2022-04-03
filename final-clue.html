@@ -139,7 +139,18 @@ body.preventive {
   background-size: cover;
 }
 
-a.endings { color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="TODO" color="red"></tw-tag>,<tw-tag name="ending" color="yellow"></tw-tag>,<tw-tag name="final" color="blue"></tw-tag>,<tw-tag name="jail" color="yellow"></tw-tag>,<tw-tag name="preventive" color="yellow"></tw-tag>,<tw-tag name="you-win" color="blue"></tw-tag>,<tw-tag name="youwin" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="311.6666666666667,278" size="100,100">&lt;&lt;audio mainsong volume 0.2 loop play&gt;&gt;\
+a.endings { color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="TODO" color="red"></tw-tag>,<tw-tag name="ending" color="yellow"></tw-tag>,<tw-tag name="final" color="blue"></tw-tag>,<tw-tag name="jail" color="yellow"></tw-tag>,<tw-tag name="preventive" color="yellow"></tw-tag>,<tw-tag name="you-win" color="blue"></tw-tag>,<tw-tag name="youwin" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="311.6666666666667,278" size="100,100">&lt;&lt;set $has_forged_docs to false&gt;&gt;\
+&lt;&lt;set $has_money to false&gt;&gt;\
+&lt;&lt;set $has_diamonds to true&gt;&gt;\
+&lt;&lt;set $has_ticket to false&gt;&gt;\
+&lt;&lt;set $ordered_docs to false&gt;&gt;\
+&lt;&lt;set $start_time to Date.now()&gt;&gt;\
+&lt;&lt;set $start_time_docs to &quot;&quot;&gt;&gt;\
+&lt;&lt;set $evidences to 0&gt;&gt;\
+&lt;&lt;set $tried_to_mess_evidence to false&gt;&gt;\
+&lt;&lt;set $final_clue to false&gt;&gt;
+&lt;&lt;audio youwon stop&gt;&gt;&lt;&lt;audio gameover stop&gt;&gt;\
+&lt;&lt;audio mainsong volume 0.2 loop play&gt;&gt;\
 &lt;div align=&quot;center&quot;&gt;[img[&quot;images/puzzle-logo.png&quot;]]&lt;/div&gt;
 The art, academic and wealth circles in the city are teeming with the news: the famous exuberant (and expensive, and historical, all those things) Bonaparte diamonds are missing. 
 
@@ -156,19 +167,12 @@ In a whim, you could say that, but you&#39;re not going back now. And you&#39;re
 [[Let&#39;s go then!-&gt;prologue]]
 [[I already know the backstory... Is there any way I can skip it?-&gt;plan-next-steps2]]
 [[I&#39;m not much into detective stories, sorry. Where&#39;s the exit?-&gt;credits]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="50.33333333333333,128.33333333333331" size="100,100">&lt;&lt;cacheaudio &quot;mainsong&quot; &quot;audio/soundtrack.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;badnews&quot; &quot;audio/badnews.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;gameover&quot; &quot;audio/gameover.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;youwon&quot; &quot;audio/youwon.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;alert&quot; &quot;audio/alert.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;danger&quot; &quot;audio/danger.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;yay&quot; &quot;audio/yay.mp3&quot;&gt;&gt;
-
-&lt;&lt;set $has_forged_docs to false&gt;&gt;
-&lt;&lt;set $has_money to false&gt;&gt;
-&lt;&lt;set $has_diamonds to true&gt;&gt;
-&lt;&lt;set $has_ticket to false&gt;&gt;
-&lt;&lt;set $ordered_docs to false&gt;&gt;
-&lt;&lt;set $start_time to Date.now()&gt;&gt;
-&lt;&lt;set $start_time_docs to &quot;&quot;&gt;&gt;
-&lt;&lt;set $evidences to 0&gt;&gt;
-&lt;&lt;set $tried_to_mess_evidence to false&gt;&gt;
 
 &lt;&lt;set $no_events_passages = [&quot;credits&quot;, &quot;Start&quot;, &quot;prologue&quot;, &quot;prologue2&quot;, &quot;prologue3&quot;, &quot;plan-next-steps&quot;, &quot;plan-next-steps2&quot;, &quot;ending-you-win-escape&quot;, &quot;ending-preventive-detection&quot;, &quot;ending-clue-found&quot;]&gt;&gt;
 
@@ -190,27 +194,22 @@ In a whim, you could say that, but you&#39;re not going back now. And you&#39;re
 All icons are public domain, from [[OpenClipart|https://openclipart.org]].
 Audio effects are also public domain (CC 0), from [[freesound|https://freesound.org]].
 Photos are my own, with some editing using [[Gimp|https://www.gimp.org/]].
-Soundtrack is &quot;Dramatic Electronic Theme #3 (Slow Ambient Version - Looped)&quot; by [[Andrey Sitkov|https://soundcloud.com/andrey-sitkov]], from [[this bundle|https://www.humblebundle.com/software/big-music-bundle-for-games-films-and-content-creators-2-software]].
+Soundtrack: Dramatic Electronic Themes #2 and #3 (Slow Ambient Version - Looped), and Be Positive (Faster version) - Looped, all by [[Andrey Sitkov|https://soundcloud.com/andrey-sitkov]], from [[this bundle|https://www.humblebundle.com/software/big-music-bundle-for-games-films-and-content-creators-2-software]].
 
-Version: 0.6.
-&lt;&lt;set $has_forged_docs to false&gt;&gt;\
-&lt;&lt;set $has_money to false&gt;&gt;\
-&lt;&lt;set $has_diamonds to true&gt;&gt;\
-&lt;&lt;set $has_ticket to false&gt;&gt;\
-&lt;&lt;set $ordered_docs to false&gt;&gt;\
-&lt;&lt;set $start_time to Date.now()&gt;&gt;\
-&lt;&lt;set $start_time_docs to &quot;&quot;&gt;&gt;\
-&lt;&lt;set $evidences to 0&gt;&gt;\
-&lt;&lt;set $tried_to_mess_evidence to false&gt;&gt;\
+Version: 0.7.
 
-[[&quot;Take me back, I want to play!&quot;-&gt;Start]]</tw-passagedata><tw-passagedata pid="4" name="ending-you-win-escape" tags="youwin" position="2402,630" size="100,100">You made it!
+[[&quot;Take me back, I want to play!&quot;-&gt;Start]]</tw-passagedata><tw-passagedata pid="4" name="ending-you-win-escape" tags="youwin" position="2402,630" size="100,100">&lt;&lt;audio mainsong fadeoverto 2 0&gt;&gt;\
+&lt;&lt;audio youwon volume 0 fadein&gt;&gt;\
+You made it!
 
 Just now, looking through the airplane window, you believe this is truly happening. As the flight attendant brings you the champagne you asked for, you finally start to relax.
 
 Now heading home, sweet new home.
 
 [[See credits.-&gt;credits]]
-[[Restart story.-&gt;Start]]</tw-passagedata><tw-passagedata pid="5" name="ending-preventive-detention" tags="preventive" position="2379,809" size="100,100">Too many pieces were put together and you&#39;re the main suspect now. 
+[[Restart story.-&gt;Start]]</tw-passagedata><tw-passagedata pid="5" name="ending-preventive-detention" tags="preventive" position="2379,809" size="100,100">&lt;&lt;audio mainsong fadeoverto 2 0&gt;&gt;\
+&lt;&lt;audio gameover volume 0 fadein&gt;&gt;\
+Too many pieces were put together and you&#39;re the main suspect now. 
 
 The police (and your own colleagues, to be honest) believe you are the criminal, and that it&#39;s just a matter of time for you to flee (and guess what, they&#39;re right).
 
@@ -222,7 +221,9 @@ Sorry buddy, you were so close. &lt;&lt;if $has_diamonds is false and $has_money
 &lt;&lt;/if&gt;&gt;
 
 &lt;a data-passage=&quot;credits&quot; class=&quot;endings&quot;&gt;See credits.&lt;/a&gt;
-&lt;a data-passage=&quot;Start&quot; class=&quot;endings&quot;&gt;Restart story. Hated that ending.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="6" name="ending-clue-found" tags="jail" position="2380,1051" size="100,100">The results came out and your fingerprints were all over the place. The only ones, by the way. You took too long to depart, fellow! What were you waiting for?!
+&lt;a data-passage=&quot;Start&quot; class=&quot;endings&quot;&gt;Restart story. Hated that ending.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="6" name="ending-clue-found" tags="jail" position="2380,1051" size="100,100">&lt;&lt;audio mainsong fadeoverto 2 0&gt;&gt;\
+&lt;&lt;audio gameover volume 0 fadein&gt;&gt;\
+The results came out and your fingerprints were all over the place. The only ones, by the way. You took too long to depart, fellow! What were you waiting for?!
 
 The police is here to arrest you now, and there&#39;s nothing you can do. Well, hiring a lawyer would be my piece of advice, or ask for one to be provided to you, all that talk. But the prosecution has all the evidence they need, so that will be a tricky defense. 
 
@@ -298,6 +299,7 @@ You didn&#39;t have much time to say anything, but what was there to say anyway?
 &lt;&lt;if $has_diamonds&gt;&gt;It&#39;s a good thing you didn&#39;t have the time to hide the diamonds yet. It was risky, but hey, nothing happened! And now you won&#39;t miss the appointment. You pick them up at your home and [[head directly to the meeting point when you receive the text.-&gt;task-sell-jewelry]]
 &lt;&lt;else&gt;&gt;[[You hurry up to get the diamonds in the storage facility before the appointment time.-&gt;task-pickup-jewelry]] 
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="PassageHeader" tags="" position="51.33333333333333,258.3333333333333" size="100,100">&lt;&lt;set $where to passage()&gt;&gt;\
+&lt;&lt;if ((Date.now() - $start_time) / 1000) gt 180&gt;&gt;&lt;&lt;set $final_clue to true&gt;&gt;&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if not $no_events_passages.includes($where)&gt;&gt;\
 &lt;div class=&quot;alert&quot;&gt;&lt;span id=&quot;event&quot;&gt;
 &lt;/span&gt;&lt;/div&gt;
@@ -339,49 +341,50 @@ Among all these things, you start off by...
 [[...finding a safe place for the diamonds.-&gt;task-hide-jewelry]]
 [[...evading the security in the crime scene to look for anything you left behind and wipe out fingerprints.-&gt;task-sneakin-crime-scene]]
 [[...going online to buy tickets to... er, Vanuatu, maybe?-&gt;task-buy-ticket]]
-[[...contacting a document forger recommended to you to ask for new documents.-&gt;task-make-new-docs]]</tw-passagedata><tw-passagedata pid="24" name="is-good-to-go" tags="" position="1526,790" size="100,100">&lt;&lt;if $has_ticket and $has_money and $has_forged_docs&gt;&gt;\
+[[...contacting a document forger recommended to you to ask for new documents.-&gt;task-make-new-docs]]</tw-passagedata><tw-passagedata pid="24" name="is-good-to-go" tags="" position="1524.3333333333333,790" size="100,100">&lt;&lt;if $has_ticket and $has_money and $has_forged_docs&gt;&gt;\
 You finally have everything you need: the money, your ticket, your documents! And the police is nowhere near, you&#39;re good to go! 
 
 [[You hurry home to finish packing and then take a taxi to the airport. You&#39;re very close to your new life!-&gt;ending-you-win-escape]]
 &lt;&lt;else&gt;&gt;\
   &lt;&lt;if $evidences gt 3&gt;&gt;\
+  &lt;&lt;audio badnews fadeoverto 3 0&gt;&gt;\
   &lt;div align=&quot;center&quot;&gt;[img[&quot;images/end.png&quot;]]
 
   [[Oops, bad news. It looks like something gone wrong here, pal.-&gt;ending-preventive-detention]]&lt;/div&gt;
   &lt;&lt;elseif $final_clue&gt;&gt;\
+  &lt;&lt;audio badnews fadeoverto 3 0&gt;&gt;\
   &lt;div align=&quot;center&quot;&gt;[img[&quot;images/end.png&quot;]]
   
-  [[Bad news from the police lab. Well, bad for you.-&gt;ending-clue-found]]  &lt;/div&gt;
+  [[Bad news from the police lab. Well, bad for you.-&gt;ending-clue-found]]&lt;/div&gt;
   &lt;&lt;else&gt;&gt;\
-  &lt;&lt;/if&gt;&gt;\
+    &lt;&lt;if $tried_to_mess_evidence is false&gt;&gt;Shouldn&#39;t you also try to cover your tracks on the crime scene? Maybe the police has not collected your fingerprints yet... [[Let&#39;s go there!-&gt;task-sneakin-crime-scene]]
+    &lt;&lt;else&gt;&gt;\
+    &lt;&lt;/if&gt;&gt;\
+  
+    &lt;&lt;if $ordered_docs is false and $has_forged_docs is false&gt;&gt;You haven&#39;t ordered your new documents yet, and you&#39;ll need them for traveling. [[Order them now.-&gt;task-make-new-docs]]
+    &lt;&lt;else&gt;&gt;\
+    &lt;&lt;/if&gt;&gt;\
+  
+    &lt;&lt;if $has_diamonds is true and $has_money is false&gt;&gt;You haven&#39;t hidden the jewelry yet. If they&#39;re found, this is all for nothing. [[Hide jewelry until your contact calls.-&gt;task-hide-jewelry]]
+    &lt;&lt;else&gt;&gt;\
+    &lt;&lt;/if&gt;&gt;\
+  
+    &lt;&lt;if $has_ticket is false&gt;&gt;You don&#39;t have a plane ticket. How do you expect to escape? On foot? [[Go buy the ticket then.-&gt;task-buy-ticket]]
+    &lt;&lt;else&gt;&gt;\
+    &lt;&lt;/if&gt;&gt;\
 
-  &lt;&lt;if $tried_to_mess_evidence is false&gt;&gt;Shouldn&#39;t you also try to cover your tracks on the crime scene? Maybe the police has not collected your fingerprints yet... [[Let&#39;s go there!-&gt;task-sneakin-crime-scene]]
-  &lt;&lt;else&gt;&gt;\
-  &lt;&lt;/if&gt;&gt;\
+    &lt;&lt;if $ordered_docs and $has_forged_docs is false and ((Date.now() - $start_time_docs) / 1000) gt 60&gt;&gt;\
+    You just received a message that your forged documents are ready. You can [[pick them up-&gt;is-good-to-go][$has_forged_docs to true]].
+    &lt;&lt;elseif $ordered_docs and $has_forged_docs is false&gt;&gt;You are still waiting for your documents to be ready. [[Continue waiting, quietly, to not raise any suspicions.-&gt;is-good-to-go]]
+    &lt;&lt;else&gt;&gt;\
+    &lt;&lt;/if&gt;&gt;\
   
-  &lt;&lt;if $ordered_docs is false and $has_forged_docs is false&gt;&gt;You haven&#39;t ordered your new documents yet, and you&#39;ll need them for traveling. [[Order them now.-&gt;task-make-new-docs]]
-  &lt;&lt;else&gt;&gt;\
-  &lt;&lt;/if&gt;&gt;\
-  
-  &lt;&lt;if $has_diamonds is true and $has_money is false&gt;&gt;You haven&#39;t hidden the jewelry yet. If they&#39;re found, this is all for nothing. [[Hide jewelry until your contact calls.-&gt;task-hide-jewelry]]
-  &lt;&lt;else&gt;&gt;\
-  &lt;&lt;/if&gt;&gt;\
-  
-  &lt;&lt;if $has_ticket is false&gt;&gt;You don&#39;t have a plane ticket. How do you expect to escape? On foot? [[Go buy the ticket then.-&gt;task-buy-ticket]]
-  &lt;&lt;else&gt;&gt;\
-  &lt;&lt;/if&gt;&gt;\
+    &lt;&lt;if $has_money is false and ((Date.now() - $start_time) / 1000) gt 100&gt;&gt;\
+    OMG, your phone is ringing right now and it&#39;s your mystery contact. You feel such a badass... except why is your damn phone not responding? Alright, here it is. You&#39;re smart for a lot of things -- you have a PhD, for God&#39;s sake -- but these devices are a thing of evil.
 
-  &lt;&lt;if $ordered_docs and $has_forged_docs is false and ((Date.now() - $start_time_docs) / 1000) gt 60&gt;&gt;\
-  You just received a message that your forged documents are ready. You can [[pick them up-&gt;is-good-to-go][$has_forged_docs to true]].
-  &lt;&lt;elseif $ordered_docs and $has_forged_docs is false&gt;&gt;You are still waiting for your documents to be ready. [[Continue waiting, quietly, to not raise any suspicions.-&gt;is-good-to-go]]
-  &lt;&lt;else&gt;&gt;\
-  &lt;&lt;/if&gt;&gt;\
-  
-  &lt;&lt;if $has_money is false and ((Date.now() - $start_time) / 1000) gt 100&gt;&gt;\
-OMG, your phone is ringing right now and it&#39;s your mystery contact. You feel such a badass... except why is your damn phone not responding? Alright, here it is. You&#39;re smart for a lot of things -- you have a PhD, for God&#39;s sake -- but these devices are a thing of evil.
-
-  [[You finally manage to answer the call-&gt;event-receive-dealer-call]].
-  &lt;&lt;elseif $has_money is false&gt;&gt;Your contact has not called you yet to make the trade. They know you have the jewelry, and you trust them to call when it&#39;s safe to make the exchange. [[Wait for them to call.-&gt;is-good-to-go]]
+    [[You finally manage to answer the call-&gt;event-receive-dealer-call]].
+    &lt;&lt;elseif $has_money is false&gt;&gt;Your contact has not called you yet to make the trade. They know you have the jewelry, and you trust them to call when it&#39;s safe to make the exchange. [[Wait for them to call.-&gt;is-good-to-go]]
+    &lt;&lt;/if&gt;&gt;\
   &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="go-to-police-station" tags="" position="835.9999999999999,1232.3333333333333" size="100,100">At the police station reception, there is a young fellow in the phone, seeming very busy. He makes a gesture instructing you to wait a sec, but when he&#39;s about to talk to you he needs to pick the phone again, and again. At a certain point, he seems so immersed in the conversation you believe he won&#39;t even notice if you enter the precint. And you are right, he doesn&#39;t.
 
