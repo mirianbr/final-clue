@@ -169,7 +169,7 @@ a.endings { color: black; }</style><script role="script" id="twine-user-script" 
 &lt;&lt;set $start_time to Date.now()&gt;&gt;\
 &lt;&lt;set $last_interrupted_time to Date.now()&gt;&gt;\
 &lt;&lt;set $start_time_docs to &quot;&quot;&gt;&gt;\
-&lt;&lt;set $time_limit to 180&gt;&gt;\
+&lt;&lt;set $time_limit to 120&gt;&gt;\
 &lt;&lt;set $evidences to 0&gt;&gt;\
 &lt;&lt;set $tried_to_mess_evidence to false&gt;&gt;\
 &lt;&lt;set $final_clue to false&gt;&gt;
@@ -202,6 +202,7 @@ The art, academic and wealth circles in the city are teeming with the news: the 
 &lt;&lt;cacheaudio &quot;laugh&quot; &quot;audio/laugh.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;coin&quot; &quot;audio/coin.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;hmm&quot; &quot;audio/hmm.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;clock&quot; &quot;audio/clock.mp3&quot;&gt;&gt;
 
 &lt;&lt;set $no_events_passages = [&quot;credits&quot;, &quot;Start&quot;, &quot;prologue&quot;, &quot;prologue2&quot;, &quot;prologue3&quot;, &quot;plan-next-steps&quot;, &quot;plan-next-steps2&quot;, &quot;delay-police-work&quot;, &quot;interruption&quot;, &quot;ending-you-win-escape&quot;, &quot;ending-preventive-detection&quot;, &quot;ending-clue-found&quot;]&gt;&gt;
 
@@ -220,7 +221,7 @@ The art, academic and wealth circles in the city are teeming with the news: the 
 &quot;The case was re-assigned to a very experienced team that has dealt with art theft before. These guys are FAST. No so good for you...&quot;]&gt;&gt;
 
 &lt;&lt;set $interruptions = [
-&quot;You were called by the police to testify. You went willingly and tried your best to be convincent, but this took you half an afternoon, a time you don&#39;t have.&quot;,
+&quot;You were called by the police to testify. You went willingly and tried your best to be convincing, but this took you half an afternoon, a time you don&#39;t have.&quot;,
 &quot;The police has called the department looking for you. You and them had a long call, and you had to provide further details on everything you knew (that you wanted to share, of course). They are wasting your time, but you need to look willing to cooperate.&quot;,
 &quot;Your elderly neighbor just asked for your help with something. You need to keep being a good neighbor, but why on Earth they had to move their furniture again this week?!&quot;,
 &quot;You are having many assignments at work; with students, colleagues, the administrative board... Just a few more days!&quot;]&gt;&gt;
@@ -271,34 +272,31 @@ The police is here to arrest you now, and there&#39;s nothing you can do. Well, 
 Good luck there.
 
 &lt;a data-passage=&quot;credits&quot; class=&quot;endings&quot;&gt;See credits.&lt;/a&gt;
-&lt;a data-passage=&quot;Start&quot; class=&quot;endings&quot;&gt;Really?! Restart story, I want to make new choices and see where this takes me.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="7" name="task-buy-ticket" tags="" position="783,902" size="100,100">&lt;&lt;set $has_ticket to true&gt;&gt;\
-It&#39;s surprisingly easy how you can buy anything online, as long as you have a valid credit card. It doesn&#39;t even have to be in your name. 
+&lt;a data-passage=&quot;Start&quot; class=&quot;endings&quot;&gt;Really?! Restart story, I want to make new choices and see where this takes me.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="7" name="task-buy-ticket" tags="" position="783,902" size="100,100">It&#39;s surprisingly easy how you can buy anything online, as long as you have a valid credit card. It doesn&#39;t even have to be in your name. 
 
 You buy three tickets to safe destinations that have frequent flights. This will ensure you&#39;ll have an option in the minute you&#39;re able to depart. All the flights happen more than once a day, so you won&#39;t have issues anticipating any of them.
 
-[[What else, now?-&gt;is-good-to-go]]</tw-passagedata><tw-passagedata pid="8" name="task-hide-jewelry" tags="" position="790,745" size="100,100">&lt;&lt;set $has_diamonds to false&gt;&gt;\
-You rent yourself a nice legit storage place, perfect to keep your diamonds safe until your contact calls you to make the trade. 
+[[What else, now?-&gt;is-good-to-go]]</tw-passagedata><tw-passagedata pid="8" name="task-hide-jewelry" tags="" position="790,745" size="100,100">You rent yourself a nice legit storage place, perfect to keep your diamonds safe until your contact calls you to make the trade. 
 
 No one followed you, it&#39;s across the city and under a safe password you will remember. All good.
 
-[[Next task!-&gt;is-good-to-go]]</tw-passagedata><tw-passagedata pid="9" name="task-pickup-jewelry" tags="" position="1530,405" size="100,100">&lt;&lt;set $has_diamonds to true&gt;&gt;\
-Being careful to not be followed, you go to the storage where the jewelry is, so you can make the trade.
+[[Next task!-&gt;is-good-to-go]]</tw-passagedata><tw-passagedata pid="9" name="task-pickup-jewelry" tags="" position="1528.3333333333333,405" size="100,100">Being careful to not be followed, you go to the storage where the jewelry is, so you can make the trade.
 
 It&#39;s not without relief that you find the diamonds exactly where you left them. So much has happened and you some times cannot even believe you&#39;re doing this. You&#39;re not a criminal, you don&#39;t know how other people handle this level of pressure... It&#39;s a good thing you&#39;re one step further into your new life!
 
-[[You go to the meeting point to make the trade. Almost there now.-&gt;task-sell-jewelry]]</tw-passagedata><tw-passagedata pid="10" name="prologue" tags="" position="213,450" size="100,100">A month ago, you were contacted by someone that knew more about you than you have ever shared with any of your colleagues. 
+&lt;&lt;set $has_diamonds to false&gt;&gt;\
+[[You go to the meeting point to make the trade. Almost there now.-&gt;task-sell-jewelry][$has_money to true]]</tw-passagedata><tw-passagedata pid="10" name="prologue" tags="" position="211.33333333333334,450" size="100,100">A month ago, you were contacted by someone that knew more about you than you have ever shared with any of your colleagues. 
 
-Your reputable yet stagnant career as an Art History professor. Your expensive cuisine and wine preferences. Your astonishing debt, left by a perdulary family to you when it was already out of control. Your privileged position of being in this new exhibition organization committee.
+Your reputable yet stagnant career as an Art History professor. Your expensive cuisine and wine preferences. Your astonishing debt, left by a prodigal family to you when it was already out of control. Your privileged position of being in this new exhibition organization committee.
 
 It was a little scary in the beginning, but then... it was nice to have someone to chat about these things without pretending or hiding, for a change. Refreshing.
 
 [[Continue.-&gt;prologue2]]</tw-passagedata><tw-passagedata pid="11" name="task-sell-jewelry" tags="" position="1753,580" size="100,100">&lt;&lt;audio coin play&gt;&gt;\
-&lt;&lt;set $has_diamonds to false&gt;&gt;&lt;&lt;set $has_money to true&gt;&gt;\
-The trade is done quickly and you are even a little disapointed: no masks used, no persecution, no guns... It was not as exciting as you thought it would be.
+The trade is done quickly and you are even a little disappointed: no masks used, no persecution, no guns... It was not as exciting as you thought it would be.
 
 The suitcase with money, on the other hand, is exactly how you imagined. It even matches the suit you bought for the trip!
 
-[[You make a mental inventory of your tasks... Is there anything missing?-&gt;is-good-to-go]] </tw-passagedata><tw-passagedata pid="12" name="plan-next-steps" tags="" position="298.6666666666667,915" size="100,100">Regardless of what you will do after, being in jail reduces your options significatively, so you&#39;d rather avoid it.
+[[You make a mental inventory of your tasks... Is there anything missing?-&gt;is-good-to-go]] </tw-passagedata><tw-passagedata pid="12" name="plan-next-steps" tags="" position="298.6666666666667,915" size="100,100">Regardless of what you will do after, being in jail reduces your options significantly, so you&#39;d rather avoid it.
 
 If you could just get rid of the evidence you left in the scene... You know the police has locked the area this morning, but you work there. How hard can it be to sneak in? 
 
@@ -341,19 +339,27 @@ You hung up the phone, a little frustrated for not being able to pick your own n
 
 &lt;&lt;next&gt;&gt;You didn&#39;t have much time to say anything, but what was there to say anyway? She seemed to have everything under control, so efficient. &quot;She would have never forgotten gloves&quot;, you think to yourself.
 
-&lt;&lt;next&gt;&gt;&lt;&lt;if $has_diamonds&gt;&gt;It&#39;s a good thing you didn&#39;t have the time to hide the diamonds yet. It was risky, but hey, nothing happened! And now you won&#39;t miss the appointment. You pick them up at your home and [[head directly to the meeting point when you receive the text.-&gt;task-sell-jewelry]]
-&lt;&lt;else&gt;&gt;[[You hurry up to get the diamonds in the storage facility before the appointment time.-&gt;task-pickup-jewelry]] 
+&lt;&lt;next&gt;&gt;&lt;&lt;if $has_diamonds&gt;&gt;&lt;&lt;set $has_diamonds to false&gt;&gt;\
+It&#39;s a good thing you didn&#39;t have the time to hide the diamonds yet. It was risky, but hey, nothing happened! And now you won&#39;t miss the appointment. You pick them up at your home and [[head directly to the meeting point when you receive the text.-&gt;task-sell-jewelry][$has_money to true]]
+&lt;&lt;else&gt;&gt;[[You hurry up to get the diamonds in the storage facility before the appointment time.-&gt;task-pickup-jewelry][$has_diamonds to true]] 
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="PassageHeader" tags="" position="51,258" size="100,100">&lt;&lt;if ((Date.now() - $start_time) / 1000) gt $time_limit&gt;&gt;&lt;&lt;set $final_clue to true&gt;&gt;&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="PassageHeader" tags="" position="47.666666666666664,258" size="100,100">&lt;&lt;set $time_left to Math.trunc($time_limit - ((Date.now() - $start_time) / 1000))&gt;&gt;
+&lt;&lt;if $time_left lt 0&gt;&gt;&lt;&lt;set $time_left to 0&gt;&gt;&lt;&lt;elseif $time_left lt 10&gt;&gt;&lt;&lt;audio danger play&gt;&gt;&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if ((Date.now() - $start_time) / 1000) gt $time_limit&gt;&gt;&lt;&lt;set $final_clue to true&gt;&gt;&lt;&lt;/if&gt;&gt;\
 &lt;&lt;set $where to passage()&gt;&gt;\
 &lt;&lt;if not $no_events_passages.includes($where)&gt;&gt;\
-&lt;div class=&quot;alert&quot;&gt;&lt;span id=&quot;items&quot;&gt;You have: &lt;&lt;if $has_diamonds is false and $has_money is false and $has_forged_docs is false and $has_ticket is false&gt;&gt;nothing.&lt;&lt;else&gt;&gt;&lt;&lt;if $has_diamonds&gt;&gt;[img[&quot;images/diamond.png&quot;]] diamonds |&lt;&lt;/if&gt;&gt;&lt;&lt;if $has_money&gt;&gt;[img[&quot;images/diamond.png&quot;]] money |&lt;&lt;/if&gt;&gt;&lt;&lt;if $has_ticket&gt;&gt;[img[&quot;images/diamond.png&quot;]] ticket |&lt;&lt;/if&gt;&gt;&lt;&lt;if $has_forged_docs&gt;&gt;[img[&quot;images/diamond.png&quot;]] new documents |&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;div class=&quot;alert&quot;&gt;&lt;span id=&quot;items&quot;&gt;You have: &lt;&lt;if $has_diamonds is false and $has_money is false and $has_forged_docs is false and $has_ticket is false&gt;&gt;nothing.&lt;&lt;else&gt;&gt;&lt;&lt;if $has_diamonds&gt;&gt;[img[&quot;images/diamond.png&quot;]] diamonds |&lt;&lt;/if&gt;&gt;&lt;&lt;if $has_money&gt;&gt;   [img[&quot;images/money.png&quot;]] money |&lt;&lt;/if&gt;&gt;&lt;&lt;if $has_ticket&gt;&gt;   [img[&quot;images/ticket.png&quot;]] ticket |&lt;&lt;/if&gt;&gt;&lt;&lt;if $has_forged_docs&gt;&gt;   [img[&quot;images/docs.png&quot;]] new documents |&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt; Time left: &lt;span id=&quot;timeleft&quot;&gt;$time_left&lt;/span&gt;.
 &lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;alert&quot;&gt;&lt;span id=&quot;event&quot;&gt;
 &lt;/span&gt;&lt;/div&gt;
     &lt;&lt;silently&gt;&gt;
 	&lt;&lt;set $last_sec to 10&gt;&gt;
 	&lt;&lt;repeat 1s&gt;&gt;
+	
+	&lt;&lt;set $time_left to Math.trunc($time_limit - ((Date.now() - $start_time) / 1000))&gt;&gt;
+	&lt;&lt;if $time_left lt 0&gt;&gt;&lt;&lt;set $time_left to 0&gt;&gt;&lt;&lt;elseif $time_left lt 10&gt;&gt;&lt;&lt;audio danger play&gt;&gt;&lt;&lt;/if&gt;&gt;
+	&lt;&lt;replace &quot;#timeleft&quot;&gt;&gt;$time_left&lt;&lt;/replace&gt;&gt;
+	
 	&lt;&lt;set _timediff to ((Date.now() - $start_time) / 1000)&gt;&gt;
 	&lt;&lt;if (_timediff gt 30)&gt;&gt;
 	  &lt;&lt;set _now to new Date()&gt;&gt;
@@ -361,7 +367,7 @@ You hung up the phone, a little frustrated for not being able to pick your own n
 	  &lt;&lt;if ((_sec gte 0 and _sec lte 9) or (_sec gte 30 and _sec lte 39))&gt;&gt;
 	  &lt;&lt;if ((Math.trunc($last_sec / 30)) neq (Math.trunc(_sec / 30)))&gt;&gt;
 	    &lt;&lt;set $last_sec to _sec&gt;&gt;
-		&lt;&lt;set $random_event to either(&quot;nothing&quot;, &quot;nothing&quot;, &quot;good&quot;, &quot;bad&quot;)&gt;&gt;
+		&lt;&lt;set $random_event to either(&quot;nothing&quot;, &quot;good&quot;, &quot;bad&quot;)&gt;&gt;
 		&lt;&lt;if $random_event eq &quot;good&quot;&gt;&gt;
 		    &lt;&lt;set _text to either($good_events)&gt;&gt;
 			&lt;&lt;audio yay play&gt;&gt;
@@ -394,20 +400,20 @@ And it was thinking about all those things that you pocketed the jewel. Simple a
  
 When you are finally back from memory lane, you find yourself seating in your kitchen. Now it&#39;s time to [[plan your next steps.-&gt;plan-next-steps]]</tw-passagedata><tw-passagedata pid="19" name="plan-next-steps2" tags="" position="417.6666666666667,773" size="100,100">You also have a number of things to take care for your escape. You start to note them down: 
 &lt;&lt;type 10ms&gt;&gt;\
-* Buying a ticket for some place far. Preferrably with no extradition treaties.
+* Buying a ticket for some place far. Preferably with no extradition treaties.
 * Getting yourself a forged new identity, so you can start a new life there.
-* Finally, meet your mistery contact and make the trade, exchanging the diamonds for the money. And then you&#39;re ready to go!
+* Finally, meet your mystery contact and make the trade, exchanging the diamonds for the money. And then you&#39;re ready to go!
 \&lt;&lt;/type&gt;&gt;
 
 &lt;&lt;timed 4500ms t8n&gt;&gt;Until then, you should live life as usual, to not raise suspicions. And probably find a place to keep the diamonds safe? Is your fireplace really the best place for them?
 
 &lt;&lt;next&gt;&gt;Among all these things, you start off by...
 
-[[...finding a safe place for the diamonds.-&gt;task-hide-jewelry]]
+[[...finding a safe place for the diamonds.-&gt;task-hide-jewelry][$has_diamonds to false]]
 [[...evading the security in the crime scene to look for anything you left behind and wipe out fingerprints.-&gt;task-sneakin-crime-scene]]
-[[...going online to buy tickets to... er, Vanuatu, maybe?-&gt;task-buy-ticket]]
+[[...going online to buy tickets to... er, Vanuatu, maybe?-&gt;task-buy-ticket][$has_ticket to true]]
 [[...contacting a document forger recommended to you to ask for new documents.-&gt;task-make-new-docs]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="is-good-to-go" tags="" position="1544,773" size="100,100">&lt;&lt;if ($last_interrupted_time + 40000) lt Date.now()&gt;&gt;\
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="is-good-to-go" tags="" position="1544,769.6666666666666" size="100,100">&lt;&lt;if ($last_interrupted_time + 40000) lt Date.now()&gt;&gt;\
 @@.pulse;Oops, something came up. You&#39;ll need to take some time to [[handle this interruption.-&gt;interruption]]@@
 &lt;&lt;else&gt;&gt;\
 &lt;&lt;if $has_ticket and $has_money and $has_forged_docs&gt;&gt;\
@@ -427,20 +433,22 @@ You finally have everything you need: the money, your ticket, your documents! An
   
   [[Bad news from the police lab. Well, bad for you.-&gt;ending-clue-found]]&lt;/div&gt;
   &lt;&lt;else&gt;&gt;\
+    &lt;&lt;set $time_left to Math.trunc($time_limit - ((Date.now() - $start_time) / 1000))&gt;&gt;\
+    &lt;&lt;if $time_left lt 0&gt;&gt;&lt;&lt;set $time_left to 0&gt;&gt;&lt;&lt;/if&gt;&gt;\
     &lt;&lt;if $tried_to_mess_evidence is false&gt;&gt;Shouldn&#39;t you also try to cover your tracks at the crime scene? Maybe the police has not collected your fingerprints yet... [[Let&#39;s go there!-&gt;task-sneakin-crime-scene]]
-    &lt;&lt;elseif $evidences gt 0&gt;&gt;The police has not identified you yet, but make no mistake: they already have //some// evidence. You can take action to [[delay their investigation.-&gt;delay-police-work]]
+    &lt;&lt;elseif $evidences gt 0 or $time_left lt 30&gt;&gt;The police has not identified you yet, but make no mistake: they already have //some// evidence. You can take action to [[delay their investigation.-&gt;delay-police-work]]
 	&lt;&lt;else&gt;&gt;\
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $ordered_docs is false and $has_forged_docs is false&gt;&gt;You haven&#39;t ordered your new documents yet, and you&#39;ll need them for traveling. [[Order them now.-&gt;task-make-new-docs]]
     &lt;&lt;else&gt;&gt;\
     &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $has_diamonds is true and $has_money is false&gt;&gt;You haven&#39;t hidden the jewelry yet. If they&#39;re found, this is all for nothing. [[Hide jewelry until your contact calls.-&gt;task-hide-jewelry]]
+    &lt;&lt;if $has_diamonds is true and $has_money is false&gt;&gt;You haven&#39;t hidden the jewelry yet. If they&#39;re found, this is all for nothing. [[Hide jewelry until your contact calls.-&gt;task-hide-jewelry][$has_diamonds to false]]
     &lt;&lt;else&gt;&gt;\
     &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $has_ticket is false&gt;&gt;You don&#39;t have a plane ticket. How do you expect to escape? On foot? [[Go buy the ticket then.-&gt;task-buy-ticket]]
+    &lt;&lt;if $has_ticket is false&gt;&gt;You don&#39;t have a plane ticket. How do you expect to escape? On foot? [[Go buy the ticket then.-&gt;task-buy-ticket][$has_ticket to true]]
     &lt;&lt;else&gt;&gt;\
     &lt;&lt;/if&gt;&gt;
-    &lt;&lt;if $ordered_docs and $has_forged_docs is false and ((Date.now() - $start_time_docs) / 1000) gt 60&gt;&gt;\
+    &lt;&lt;if $ordered_docs and $has_forged_docs is false and ((Date.now() - $start_time_docs) / 1000) gt 40&gt;&gt;\
     You just received a message that your forged documents are ready. You can [[pick them up-&gt;is-good-to-go][$has_forged_docs to true]].
     &lt;&lt;elseif $ordered_docs and $has_forged_docs is false&gt;&gt;You are still waiting for your documents to be ready. [[Continue waiting, quietly, to not raise any suspicions.-&gt;is-good-to-go]]
     &lt;&lt;else&gt;&gt;\
@@ -448,13 +456,12 @@ You finally have everything you need: the money, your ticket, your documents! An
     &lt;&lt;if $has_money is false and ((Date.now() - $start_time) / 1000) gt 100&gt;&gt;\
 	&lt;&lt;audio phonevibrate play&gt;&gt;\
     OMG, your phone is ringing right now and it&#39;s your mystery contact. You feel such a badass... except why is your damn phone not responding? Alright, here it is. You&#39;re smart for a lot of things -- you have a PhD, for God&#39;s sake -- but these devices are a thing of evil.
-
     [[You finally manage to answer the call-&gt;event-receive-dealer-call]].
     &lt;&lt;elseif $has_money is false&gt;&gt;Your contact has not called you yet to make the trade. They know you have the jewelry, and you trust them to call when it&#39;s safe to make the exchange. [[Wait for them to call.-&gt;is-good-to-go]]
     &lt;&lt;/if&gt;&gt;\
   &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="go-to-police-station" tags="" position="835,1232" size="100,100">At the police station reception, there is a young fellow in the phone, seeming very busy. He makes a gesture instructing you to wait a sec, but when he&#39;s about to talk to you he needs to pick the phone again, and again. At a certain point, he seems so immersed in the conversation you believe he won&#39;t even notice if you enter the precint. And you are right, he doesn&#39;t.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="go-to-police-station" tags="" position="835,1232" size="100,100">At the police station reception, there is a young fellow in the phone, seeming very busy. He makes a gesture instructing you to wait a sec, but when he&#39;s about to talk to you he needs to pick the phone again, and again. At a certain point, he seems so immersed in the conversation you believe he won&#39;t even notice if you enter the precinct. And you are right, he doesn&#39;t.
 
 Other people do, of course, but you confidently make a gesture pointing to nowhere specifically, as if you knew where you were going, and people just let you pass. &quot;Good Lord, this are the people responsible for our safety.&quot;, you think. &quot;It&#39;s a good thing I&#39;m about to leave this country.&quot;
 
@@ -470,14 +477,15 @@ Is there any way you can delay it? Just until you&#39;re gone?
 
 You start to think about a few ideas that might help. You&#39;ll be back to them in due time.
 
-You leave the precint discreetly but wave a goodbye for the sympathetic receptionist. It may be a good thing to have a friend in this place. On the other hand, he may remember you in the future -- you may be asked what were you doing there, dangerous things like that. You hope this doesn&#39;t come to hunt you afterwards.
+You leave the precinct discreetly but wave a goodbye for the sympathetic receptionist. It may be a good thing to have a friend in this place. On the other hand, he may remember you in the future -- you may be asked what were you doing there, dangerous things like that. You hope this doesn&#39;t come to hunt you afterwards.
 
 [[Continue.-&gt;is-good-to-go]] </tw-passagedata><tw-passagedata pid="24" name="delay-police-work" tags="" position="1477,978" size="100,100">&lt;&lt;audio yay play&gt;&gt;\
 &lt;&lt;set $evidences -= 1&gt;&gt;&lt;&lt;set $time_limit += 20&gt;&gt;\
-&lt;&lt;set _text to either($delay_actions)&gt;&gt;
+&lt;&lt;set _text to &quot;You got yourself more time. &quot; + either($delay_actions)&gt;&gt;
 &lt;&lt;print _text&gt;&gt;
 
-[[Continue.-&gt;is-good-to-go]]</tw-passagedata><tw-passagedata pid="25" name="interruption" tags="" position="1666,975" size="100,100">&lt;&lt;set $last_interrupted_time to Date.now()&gt;&gt;\
+[[Continue.-&gt;is-good-to-go]]</tw-passagedata><tw-passagedata pid="25" name="interruption" tags="" position="1666,975" size="100,100">&lt;&lt;audio clock play&gt;&gt;\
+&lt;&lt;set $last_interrupted_time to Date.now()&gt;&gt;\
 &lt;&lt;set _text to either($interruptions)&gt;&gt;\
 &lt;&lt;print _text&gt;&gt;
 
