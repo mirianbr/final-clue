@@ -221,7 +221,7 @@ The art, academic and wealth circles in the city are teeming with the news: the 
 &quot;The case was re-assigned to a very experienced team that has dealt with art theft before. These guys are FAST. No so good for you...&quot;]&gt;&gt;
 
 &lt;&lt;set $interruptions = [
-&quot;You were called by the police to testify. You went willingly and tried your best to be convincing, but this took you half an afternoon, a time you don&#39;t have.&quot;,
+&quot;You were called by the police to testify. You went willingly and tried your best to be convincing, but this took you half an afternoon, a time you didn&#39;t have.&quot;,
 &quot;The police has called the department looking for you. You and them had a long call, and you had to provide further details on everything you knew (that you wanted to share, of course). They are wasting your time, but you need to look willing to cooperate.&quot;,
 &quot;Your elderly neighbor just asked for your help with something. You need to keep being a good neighbor, but why on Earth they had to move their furniture again this week?!&quot;,
 &quot;You are having many assignments at work; with students, colleagues, the administrative board... Just a few more days!&quot;]&gt;&gt;
@@ -238,7 +238,7 @@ Audio effects are also public domain (CC 0), from [[freesound|https://freesound.
 Photos are my own, with some editing using [[Gimp|https://www.gimp.org/]].
 Soundtrack: Dramatic Electronic Themes #2 and #3 (Slow Ambient Version - Looped), and Be Positive (Faster version) - Looped, all by [[Andrey Sitkov|https://soundcloud.com/andrey-sitkov]], from [[this bundle|https://www.humblebundle.com/software/big-music-bundle-for-games-films-and-content-creators-2-software]].
 
-Version: 0.7.
+Version: 1.0.
 
 [[&quot;Take me back, I want to play!&quot;-&gt;Start]]</tw-passagedata><tw-passagedata pid="4" name="ending-you-win-escape" tags="youwin" position="2402,630" size="100,100">&lt;&lt;audio mainsong fadeoverto 2 0&gt;&gt;\
 &lt;&lt;audio youwon volume 0 fadein&gt;&gt;\
@@ -367,7 +367,7 @@ It&#39;s a good thing you didn&#39;t have the time to hide the diamonds yet. It 
 	  &lt;&lt;if ((_sec gte 0 and _sec lte 9) or (_sec gte 30 and _sec lte 39))&gt;&gt;
 	  &lt;&lt;if ((Math.trunc($last_sec / 30)) neq (Math.trunc(_sec / 30)))&gt;&gt;
 	    &lt;&lt;set $last_sec to _sec&gt;&gt;
-		&lt;&lt;set $random_event to either(&quot;nothing&quot;, &quot;good&quot;, &quot;bad&quot;)&gt;&gt;
+		&lt;&lt;set $random_event to either(&quot;nothing&quot;, &quot;good&quot;, &quot;bad&quot;, &quot;bad&quot;)&gt;&gt;
 		&lt;&lt;if $random_event eq &quot;good&quot;&gt;&gt;
 		    &lt;&lt;set _text to either($good_events)&gt;&gt;
 			&lt;&lt;audio yay play&gt;&gt;
@@ -484,7 +484,7 @@ You leave the precinct discreetly but wave a goodbye for the sympathetic recepti
 &lt;&lt;set _text to &quot;You got yourself more time. &quot; + either($delay_actions)&gt;&gt;
 &lt;&lt;print _text&gt;&gt;
 
-[[Continue.-&gt;is-good-to-go]]</tw-passagedata><tw-passagedata pid="25" name="interruption" tags="" position="1666,975" size="100,100">&lt;&lt;audio clock play&gt;&gt;\
+[[Continue.-&gt;is-good-to-go]]</tw-passagedata><tw-passagedata pid="25" name="interruption" tags="" position="1667.6666666666667,975" size="100,100">&lt;&lt;audio clock play&gt;&gt;\
 &lt;&lt;set $last_interrupted_time to Date.now()&gt;&gt;\
 &lt;&lt;set _text to either($interruptions)&gt;&gt;\
 &lt;&lt;print _text&gt;&gt;
