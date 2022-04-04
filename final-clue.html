@@ -98,7 +98,29 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="final-clue" startnode="1" creator="Twine" creator-version="2.3.14" ifid="06E0BB0E-E0DB-463D-A822-87FD527EF1B8" zoom="0.6" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.alert {
+	<tw-storydata name="final-clue" startnode="1" creator="Twine" creator-version="2.3.14" ifid="06E0BB0E-E0DB-463D-A822-87FD527EF1B8" zoom="0.6" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@-webkit-keyframes pulse {
+	0%  { -webkit-transform: scale(0, 0); transform: scale(0, 0) }
+	20% { -webkit-transform: scale(1.2, 1.2); transform: scale(1.2, 1.2) }
+	40% { -webkit-transform: scale(0.9, 0.9); transform: scale(0.9, 0.9) }
+	60% { -webkit-transform: scale(1.05, 1.05); transform: scale(1.05, 1.05) }
+	80% { -webkit-transform: scale(0.925, 0.925); transform:scale(0.925, 0.925) }
+	to  { -webkit-transform: scale(1, 1); transform: scale(1, 1) }
+}
+@keyframes pulse {
+	0%  { -webkit-transform: scale(0, 0); transform: scale(0, 0) }
+	20% { -webkit-transform: scale(1.2, 1.2); transform: scale(1.2, 1.2) }
+	40% { -webkit-transform: scale(0.9, 0.9); transform: scale(0.9, 0.9) }
+	60% { -webkit-transform: scale(1.05, 1.05); transform: scale(1.05, 1.05) }
+	80% { -webkit-transform: scale(0.925, 0.925); transform: scale(0.925, 0.925) }
+	to  { -webkit-transform: scale(1, 1); transform: scale(1, 1) }
+}
+.pulse {
+	-webkit-animation: pulse 0.8s;
+	animation: pulse 0.8s;
+	display: inline-block;
+}
+
+.alert {
   font-size: 75%;
   color: slategray;
 }
@@ -139,7 +161,7 @@ body.preventive {
   background-size: cover;
 }
 
-a.endings { color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="TODO" color="red"></tw-tag>,<tw-tag name="ending" color="yellow"></tw-tag>,<tw-tag name="final" color="blue"></tw-tag>,<tw-tag name="jail" color="yellow"></tw-tag>,<tw-tag name="preventive" color="yellow"></tw-tag>,<tw-tag name="you-win" color="blue"></tw-tag>,<tw-tag name="youwin" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="311.6666666666667,276.3333333333333" size="100,100">&lt;&lt;set $has_forged_docs to false&gt;&gt;\
+a.endings { color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="TODO" color="red"></tw-tag>,<tw-tag name="ending" color="yellow"></tw-tag>,<tw-tag name="final" color="blue"></tw-tag>,<tw-tag name="jail" color="yellow"></tw-tag>,<tw-tag name="preventive" color="yellow"></tw-tag>,<tw-tag name="you-win" color="blue"></tw-tag>,<tw-tag name="youwin" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="309.3333333333333,276" size="100,100">&lt;&lt;set $has_forged_docs to false&gt;&gt;\
 &lt;&lt;set $has_money to false&gt;&gt;\
 &lt;&lt;set $has_diamonds to true&gt;&gt;\
 &lt;&lt;set $has_ticket to false&gt;&gt;\
@@ -168,13 +190,18 @@ The art, academic and wealth circles in the city are teeming with the news: the 
 [[Let&#39;s go then!-&gt;prologue]]
 [[I already know the backstory... Is there any way I can skip it?-&gt;plan-next-steps2]]
 [[I&#39;m not much into detective stories, sorry. Where&#39;s the exit?-&gt;credits]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="50.33333333333333,128.33333333333331" size="100,100">&lt;&lt;cacheaudio &quot;mainsong&quot; &quot;audio/soundtrack.mp3&quot;&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="50,128" size="100,100">&lt;&lt;cacheaudio &quot;mainsong&quot; &quot;audio/soundtrack.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;badnews&quot; &quot;audio/badnews.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;gameover&quot; &quot;audio/gameover.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;youwon&quot; &quot;audio/youwon.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;alert&quot; &quot;audio/alert.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;danger&quot; &quot;audio/danger.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;yay&quot; &quot;audio/yay.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;phonevibrate&quot; &quot;audio/phonevibrate.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;phonebeep&quot; &quot;audio/phonebeep.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;laugh&quot; &quot;audio/laugh.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;coin&quot; &quot;audio/coin.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;hmm&quot; &quot;audio/hmm.mp3&quot;&gt;&gt;
 
 &lt;&lt;set $no_events_passages = [&quot;credits&quot;, &quot;Start&quot;, &quot;prologue&quot;, &quot;prologue2&quot;, &quot;prologue3&quot;, &quot;plan-next-steps&quot;, &quot;plan-next-steps2&quot;, &quot;delay-police-work&quot;, &quot;interruption&quot;, &quot;ending-you-win-escape&quot;, &quot;ending-preventive-detection&quot;, &quot;ending-clue-found&quot;]&gt;&gt;
 
@@ -195,15 +222,15 @@ The art, academic and wealth circles in the city are teeming with the news: the 
 &lt;&lt;set $interruptions = [
 &quot;You were called by the police to testify. You went willingly and tried your best to be convincent, but this took you half an afternoon, a time you don&#39;t have.&quot;,
 &quot;The police has called the department looking for you. You and them had a long call, and you had to provide further details on everything you knew (that you wanted to share, of course). They are wasting your time, but you need to look willing to cooperate.&quot;,
-&quot;An elderly neighbor just asked for your help with something. You need to keep being a good neighbor, but why on Earth they had to move their furniture again this week?!&quot;,
+&quot;Your elderly neighbor just asked for your help with something. You need to keep being a good neighbor, but why on Earth they had to move their furniture again this week?!&quot;,
 &quot;You are having many assignments at work; with students, colleagues, the administrative board... Just a few more days!&quot;]&gt;&gt;
 
 &lt;&lt;set $delay_actions = [
 &quot;You called the police anonymously and made a false claim, to confuse the investigations.&quot;,
 &quot;You hired someone to sabotage the investigations. You then heard about some sort of fire, but you don&#39;t want to know more than that.&quot;,
-&quot;You hired someone to sabotage the investigations. News are out that investigation files were stolen, but you don&#39;t know much more than that -- and don&#39;t want to.&quot;,
+&quot;You hired a person to sabotage the investigations. News are out that investigation files were stolen, but you don&#39;t know much more than that -- and don&#39;t want to.&quot;,
 &quot;You have been making gossip in your work circles blaming other colleagues as potential suspects.&quot;]&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="credits" tags="" position="317,125" size="100,100">&lt;div align=&quot;center&quot;&gt;[img[&quot;images/puzzle-logo.png&quot;]]&lt;/div&gt;
-&#39;&#39;The Final Clue&#39;&#39; is an interactive fiction piece created by Mírian Bruckschen Motta Barros during [[Ludum Dare 50|https://ldjam.com/]] using Twine 2.1 with Sugarcube 2.34.1.
+&#39;&#39;The Final Clue&#39;&#39; is a detective/crime interactive fiction piece created by Mírian Bruckschen Motta Barros during [[Ludum Dare 50|https://ldjam.com/]] using Twine 2.1 with Sugarcube 2.34.1.
 
 All icons are public domain, from [[OpenClipart|https://openclipart.org]].
 Audio effects are also public domain (CC 0), from [[freesound|https://freesound.org]].
@@ -244,7 +271,7 @@ The police is here to arrest you now, and there&#39;s nothing you can do. Well, 
 Good luck there.
 
 &lt;a data-passage=&quot;credits&quot; class=&quot;endings&quot;&gt;See credits.&lt;/a&gt;
-&lt;a data-passage=&quot;Start&quot; class=&quot;endings&quot;&gt;Really?! Restart story, I want to make new choices and see where this takes me.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="7" name="task-buy-ticket" tags="" position="783.6666666666666,902.6666666666667" size="100,100">&lt;&lt;set $has_ticket to true&gt;&gt;\
+&lt;a data-passage=&quot;Start&quot; class=&quot;endings&quot;&gt;Really?! Restart story, I want to make new choices and see where this takes me.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="7" name="task-buy-ticket" tags="" position="783,902" size="100,100">&lt;&lt;set $has_ticket to true&gt;&gt;\
 It&#39;s surprisingly easy how you can buy anything online, as long as you have a valid credit card. It doesn&#39;t even have to be in your name. 
 
 You buy three tickets to safe destinations that have frequent flights. This will ensure you&#39;ll have an option in the minute you&#39;re able to depart. All the flights happen more than once a day, so you won&#39;t have issues anticipating any of them.
@@ -259,37 +286,40 @@ Being careful to not be followed, you go to the storage where the jewelry is, so
 
 It&#39;s not without relief that you find the diamonds exactly where you left them. So much has happened and you some times cannot even believe you&#39;re doing this. You&#39;re not a criminal, you don&#39;t know how other people handle this level of pressure... It&#39;s a good thing you&#39;re one step further into your new life!
 
-[[You go to the meeting point to make the trade. Almost there now.-&gt;task-sell-jewelry]]</tw-passagedata><tw-passagedata pid="10" name="prologue" tags="" position="213.66666666666666,450.3333333333333" size="100,100">A month ago, you were contacted by someone that knew more about you than you have ever shared with any of your colleagues. 
+[[You go to the meeting point to make the trade. Almost there now.-&gt;task-sell-jewelry]]</tw-passagedata><tw-passagedata pid="10" name="prologue" tags="" position="213,450" size="100,100">A month ago, you were contacted by someone that knew more about you than you have ever shared with any of your colleagues. 
 
 Your reputable yet stagnant career as an Art History professor. Your expensive cuisine and wine preferences. Your astonishing debt, left by a perdulary family to you when it was already out of control. Your privileged position of being in this new exhibition organization committee.
 
 It was a little scary in the beginning, but then... it was nice to have someone to chat about these things without pretending or hiding, for a change. Refreshing.
 
-[[Continue.-&gt;prologue2]]</tw-passagedata><tw-passagedata pid="11" name="task-sell-jewelry" tags="" position="1753,580" size="100,100">&lt;&lt;set $has_diamonds to false&gt;&gt;&lt;&lt;set $has_money to true&gt;&gt;\
+[[Continue.-&gt;prologue2]]</tw-passagedata><tw-passagedata pid="11" name="task-sell-jewelry" tags="" position="1753,580" size="100,100">&lt;&lt;audio coin play&gt;&gt;\
+&lt;&lt;set $has_diamonds to false&gt;&gt;&lt;&lt;set $has_money to true&gt;&gt;\
 The trade is done quickly and you are even a little disapointed: no masks used, no persecution, no guns... It was not as exciting as you thought it would be.
 
 The suitcase with money, on the other hand, is exactly how you imagined. It even matches the suit you bought for the trip!
 
-[[You make a mental inventory of your tasks... Is there anything missing?-&gt;is-good-to-go]] </tw-passagedata><tw-passagedata pid="12" name="plan-next-steps" tags="" position="297.66666666666663,915.3333333333334" size="100,100">Regardless of what you will do after, being in jail reduces your options significatively, so you&#39;d rather avoid it.
+[[You make a mental inventory of your tasks... Is there anything missing?-&gt;is-good-to-go]] </tw-passagedata><tw-passagedata pid="12" name="plan-next-steps" tags="" position="298.6666666666667,915" size="100,100">Regardless of what you will do after, being in jail reduces your options significatively, so you&#39;d rather avoid it.
 
 If you could just get rid of the evidence you left in the scene... You know the police has locked the area this morning, but you work there. How hard can it be to sneak in? 
 
 Have they collected fingerprints, DNA, all that stuff, already? Does police actually collect DNA, or it&#39;s just a movie thing? You don&#39;t know, but you don&#39;t have much time to find out. And fingerprints you&#39;re pretty sure they collect -- and you know what they&#39;ll find when they do. You need to delay at least this final, definitive evidence until you are far from here.
 
-[[Continue.-&gt;plan-next-steps2]]</tw-passagedata><tw-passagedata pid="13" name="task-sneakin-crime-scene" tags="" position="782.3333333333333,1071.3333333333333" size="100,100">&lt;&lt;set $tried_to_mess_evidence to true&gt;&gt;\
+[[Continue.-&gt;plan-next-steps2]]</tw-passagedata><tw-passagedata pid="13" name="task-sneakin-crime-scene" tags="" position="782,1071" size="100,100">&lt;&lt;audio hmm play&gt;&gt;\
+&lt;&lt;set $tried_to_mess_evidence to true&gt;&gt;\
 You had no reason to worry, it seems, for there is no one around. There is police tape in all the doors in the former exhibition, alright, but no guards watching the place or anything like that.
 
 &quot;They sent away even the other items&quot;, you think. Didn&#39;t need to, the rest of the exhibition was as interesting as the diamonds, that just happened to be expensive as well.
 
-Anyways.
+&lt;&lt;timed 2000ms t8n&gt;&gt;Anyways.
 
-You did bring gloves this time, and wear them while looking around and trying to re-trace your steps. The most important place is the glass that used to contain the diamonds... but it&#39;s gone. Of course it is.
+&lt;&lt;next&gt;&gt;You did bring gloves this time, and wear them while looking around and trying to re-trace your steps. The most important place is the glass that used to contain the diamonds... but it&#39;s gone. Of course it is.
 
-The place has been inspected, you can tell that. All the glass containers are gone, in fact. But they surely will have fingerprints from the entire team, not only yours. Right?
+&lt;&lt;next&gt;&gt;The place has been inspected, you can tell that. All the glass containers are gone, in fact. But they surely will have fingerprints from the entire team, not only yours. Right?
 
-There&#39;s only one way to be sure. You need to find a way of destructing those glasses. It&#39;s risky but it&#39;s inevitable they will trace the fingerprints to you.
+&lt;&lt;next&gt;&gt;There&#39;s only one way to be sure. You need to find a way of destructing those glasses. It&#39;s risky but it&#39;s inevitable they will trace the fingerprints to you.
 
-[[You head to the police station, trying to figure out a way to get in without being noticed.-&gt;go-to-police-station]] </tw-passagedata><tw-passagedata pid="14" name="task-make-new-docs" tags="" position="792,618" size="100,100">&lt;&lt;set $ordered_docs to true&gt;&gt;&lt;&lt;set $start_time_docs to Date.now()&gt;&gt;\
+&lt;&lt;next&gt;&gt;[[You head to the police station, trying to figure out a way to get in without being noticed.-&gt;go-to-police-station]] 
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="task-make-new-docs" tags="" position="792,618" size="100,100">&lt;&lt;set $ordered_docs to true&gt;&gt;&lt;&lt;set $start_time_docs to Date.now()&gt;&gt;\
 You call the number your mystery contact gave you and tell the person what you need. They already knew you were going to call, it seemed.
 
 The call is surprisingly short. You have asked if you could choose your new name. You were thinking something along the lines of Bond, James Bond...
@@ -298,21 +328,23 @@ The person said no, and told they were going to call you within a few days, once
 
 You hung up the phone, a little frustrated for not being able to pick your own name. On the other hand, you haven&#39;t picked up the old either, have you?
 
-[[You move forward to the next task on your list. It&#39;s exciting being a criminal!-&gt;is-good-to-go]]</tw-passagedata><tw-passagedata pid="15" name="event-receive-dealer-call" tags="" position="1319,573" size="100,100">&quot;Hello?&quot;, you say.
+[[You move forward to the next task on your list. It&#39;s exciting being a criminal!-&gt;is-good-to-go]]</tw-passagedata><tw-passagedata pid="15" name="event-receive-dealer-call" tags="" position="1320.6666666666667,573" size="100,100">&lt;&lt;audio phonebeep play&gt;&gt;\
+&quot;Hello?&quot;, you say.
 
-&quot;We should meet&quot;, your contact answer.
+&lt;&lt;timed 2000ms t8n&gt;&gt;&quot;We should meet&quot;, your contact answer.
 
-&quot;Yes, I have...&quot;
+&lt;&lt;next&gt;&gt;&quot;Yes, I have...&quot;
 
-&quot;I know. Don&#39;t talk. 30 minutes from now&quot;, she interrupts you. &quot;30 minutes from now you&#39;ll receive an address and a time in text. Be there with the package and we&#39;ll make business.&quot; 
+&lt;&lt;next&gt;&gt;&quot;I know. Don&#39;t talk. 30 minutes from now&quot;, she interrupts you. &quot;30 minutes from now you&#39;ll receive an address and a time in text. Be there with the package and we&#39;ll make business.&quot; 
 
-And hangs up.
+&lt;&lt;next&gt;&gt;And hangs up.
 
-You didn&#39;t have much time to say anything, but what was there to say anyway? She seemed to have everything under control, so efficient. &quot;She would have never forgotten gloves&quot;, you think to yourself.
+&lt;&lt;next&gt;&gt;You didn&#39;t have much time to say anything, but what was there to say anyway? She seemed to have everything under control, so efficient. &quot;She would have never forgotten gloves&quot;, you think to yourself.
 
-&lt;&lt;if $has_diamonds&gt;&gt;It&#39;s a good thing you didn&#39;t have the time to hide the diamonds yet. It was risky, but hey, nothing happened! And now you won&#39;t miss the appointment. You pick them up at your home and [[head directly to the meeting point when you receive the text.-&gt;task-sell-jewelry]]
+&lt;&lt;next&gt;&gt;&lt;&lt;if $has_diamonds&gt;&gt;It&#39;s a good thing you didn&#39;t have the time to hide the diamonds yet. It was risky, but hey, nothing happened! And now you won&#39;t miss the appointment. You pick them up at your home and [[head directly to the meeting point when you receive the text.-&gt;task-sell-jewelry]]
 &lt;&lt;else&gt;&gt;[[You hurry up to get the diamonds in the storage facility before the appointment time.-&gt;task-pickup-jewelry]] 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="PassageHeader" tags="" position="51.33333333333333,258.3333333333333" size="100,100">&lt;&lt;set $where to passage()&gt;&gt;\
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="PassageHeader" tags="" position="51,258" size="100,100">&lt;&lt;set $where to passage()&gt;&gt;\
 &lt;&lt;if ((Date.now() - $start_time) / 1000) gt $time_limit&gt;&gt;&lt;&lt;set $final_clue to true&gt;&gt;&lt;&lt;/if&gt;&gt;\
 &lt;&lt;if not $no_events_passages.includes($where)&gt;&gt;\
 &lt;div class=&quot;alert&quot;&gt;&lt;span id=&quot;event&quot;&gt;
@@ -350,30 +382,34 @@ You didn&#39;t have much time to say anything, but what was there to say anyway?
 	&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/repeat&gt;&gt;
 	&lt;&lt;/silently&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="prologue2" tags="" position="209.66666666666666,600.3333333333334" size="100,100">The mystery contact very quickly gained your trust and convinced you that it could be a good idea to do this thing. The money was good, but you would have to get a new life after that: there&#39;s no way you could hide your gains for long. And what would be the point, anyway?
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="prologue2" tags="" position="207.33333333333334,600" size="100,100">The mystery contact very quickly gained your trust and convinced you that it could be a good idea to do this thing. The money was good, but you would have to get a new life after that: there&#39;s no way you could hide your gains for long. And what would be the point, anyway?
 
 You have never done anything like it, but it&#39;s not like you were going to kill somebody or anything like that. And the diamonds weren&#39;t exactly in a museum, for everybody to appreciate: they were in a private collection, temporarily on display, and would be returned after that. Would it matter in which private collection they would be?
 
-You were making your preparations for the big event when [[everything changed.-&gt;prologue3]]</tw-passagedata><tw-passagedata pid="18" name="prologue3" tags="" position="207.66666666666666,770.3333333333334" size="100,100">The display was anticipated by two weeks, and you didn&#39;t have anything ready. Your new documents. A way to leave the country. You didn&#39;t even know where to go at this point, for you have been postponing to decide... A lot of countries didn&#39;t have any extradition treaties with your home country, but you&#39;d rather go somewhere where you could actually enjoy your new life.
+You were making your preparations for the big event when [[everything changed.-&gt;prologue3]]</tw-passagedata><tw-passagedata pid="18" name="prologue3" tags="" position="207,770" size="100,100">The display was anticipated by two weeks, and you didn&#39;t have anything ready. Your new documents. A way to leave the country. You didn&#39;t even know where to go at this point, for you have been postponing to decide... A lot of countries didn&#39;t have any extradition treaties with your home country, but you&#39;d rather go somewhere where you could actually enjoy your new life.
 
 And it was thinking about all those things that you pocketed the jewel. Simple as that. There was lots of people in the room, lots of art and jewelry to look at, little security at the moment, and you didn&#39;t think much. So, yes, in a whim. Leaving fingerprints and who knows what else. Are there even cameras in that room? You can&#39;t remember for sure, that was never really a concern of yours...
  
-When you are finally back from memory lane, you find yourself seating in your kitchen. Now it&#39;s time to [[plan your next steps.-&gt;plan-next-steps]]</tw-passagedata><tw-passagedata pid="19" name="plan-next-steps2" tags="" position="416.33333333333326,773.6666666666666" size="100,100">You also have a number of things to take care for your escape. You start to note them down: 
+When you are finally back from memory lane, you find yourself seating in your kitchen. Now it&#39;s time to [[plan your next steps.-&gt;plan-next-steps]]</tw-passagedata><tw-passagedata pid="19" name="plan-next-steps2" tags="" position="417.6666666666667,773" size="100,100">You also have a number of things to take care for your escape. You start to note them down: 
+&lt;&lt;type 10ms&gt;&gt;\
 * Buying a ticket for some place far. Preferrably with no extradition treaties.
 * Getting yourself a forged new identity, so you can start a new life there.
 * Finally, meet your mistery contact and make the trade, exchanging the diamonds for the money. And then you&#39;re ready to go!
+\&lt;&lt;/type&gt;&gt;
 
-Until then, you should live life as usual, to not raise suspicions. And probably find a place to keep the diamonds safe? Is your fireplace really the best place for them?
+&lt;&lt;timed 4500ms t8n&gt;&gt;Until then, you should live life as usual, to not raise suspicions. And probably find a place to keep the diamonds safe? Is your fireplace really the best place for them?
 
-Among all these things, you start off by...
+&lt;&lt;next&gt;&gt;Among all these things, you start off by...
 
 [[...finding a safe place for the diamonds.-&gt;task-hide-jewelry]]
 [[...evading the security in the crime scene to look for anything you left behind and wipe out fingerprints.-&gt;task-sneakin-crime-scene]]
 [[...going online to buy tickets to... er, Vanuatu, maybe?-&gt;task-buy-ticket]]
-[[...contacting a document forger recommended to you to ask for new documents.-&gt;task-make-new-docs]]</tw-passagedata><tw-passagedata pid="20" name="is-good-to-go" tags="" position="1544.3333333333333,773.3333333333334" size="100,100">&lt;&lt;if ($last_interrupted_time + 40000) lt Date.now()&gt;&gt;\
-Oops, something came up. You&#39;ll need to take some time to [[handle this interruption.-&gt;interruption]]
+[[...contacting a document forger recommended to you to ask for new documents.-&gt;task-make-new-docs]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="is-good-to-go" tags="" position="1544,773" size="100,100">&lt;&lt;if ($last_interrupted_time + 40000) lt Date.now()&gt;&gt;\
+@@.pulse;Oops, something came up. You&#39;ll need to take some time to [[handle this interruption.-&gt;interruption]]@@
 &lt;&lt;else&gt;&gt;\
 &lt;&lt;if $has_ticket and $has_money and $has_forged_docs&gt;&gt;\
+&lt;&lt;audio laugh play&gt;&gt;\
 You finally have everything you need: the money, your ticket, your documents! And the police is nowhere near, you&#39;re good to go! 
 
 [[You hurry home to finish packing and then take a taxi to the airport. You&#39;re very close to your new life!-&gt;ending-you-win-escape]]
@@ -408,6 +444,7 @@ You finally have everything you need: the money, your ticket, your documents! An
     &lt;&lt;else&gt;&gt;\
     &lt;&lt;/if&gt;&gt;\
     &lt;&lt;if $has_money is false and ((Date.now() - $start_time) / 1000) gt 100&gt;&gt;\
+	&lt;&lt;audio phonevibrate play&gt;&gt;\
     OMG, your phone is ringing right now and it&#39;s your mystery contact. You feel such a badass... except why is your damn phone not responding? Alright, here it is. You&#39;re smart for a lot of things -- you have a PhD, for God&#39;s sake -- but these devices are a thing of evil.
 
     [[You finally manage to answer the call-&gt;event-receive-dealer-call]].
@@ -415,17 +452,17 @@ You finally have everything you need: the money, your ticket, your documents! An
     &lt;&lt;/if&gt;&gt;\
   &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="go-to-police-station" tags="" position="835.9999999999999,1232.3333333333333" size="100,100">At the police station reception, there is a young fellow in the phone, seeming very busy. He makes a gesture instructing you to wait a sec, but when he&#39;s about to talk to you he needs to pick the phone again, and again. At a certain point, he seems so immersed in the conversation you believe he won&#39;t even notice if you enter the precint. And you are right, he doesn&#39;t.
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="go-to-police-station" tags="" position="835,1232" size="100,100">At the police station reception, there is a young fellow in the phone, seeming very busy. He makes a gesture instructing you to wait a sec, but when he&#39;s about to talk to you he needs to pick the phone again, and again. At a certain point, he seems so immersed in the conversation you believe he won&#39;t even notice if you enter the precint. And you are right, he doesn&#39;t.
 
 Other people do, of course, but you confidently make a gesture pointing to nowhere specifically, as if you knew where you were going, and people just let you pass. &quot;Good Lord, this are the people responsible for our safety.&quot;, you think. &quot;It&#39;s a good thing I&#39;m about to leave this country.&quot;
 
-[[Continue.-&gt;go-to-police-station2]]</tw-passagedata><tw-passagedata pid="22" name="go-to-police-station2" tags="" position="937.6666666666666,1372.3333333333333" size="100,100">You head to the back of the building, where these things are usually stored in movies. Evidence, drugs, prisoners... Oh, and if there are prisoners? Would they call the guards if they saw you?
+[[Continue.-&gt;go-to-police-station2]]</tw-passagedata><tw-passagedata pid="22" name="go-to-police-station2" tags="" position="937,1372" size="100,100">You head to the back of the building, where these things are usually stored in movies. Evidence, drugs, prisoners... Oh, and if there are prisoners? Would they call the guards if they saw you?
 
 Better approach the back rooms carefully, in any case.
 
 Surprisingly (and happily), you find what you are looking for. You can see by the window a room full of the glasses used in the exhibition there. Sadly, there is no way you could just get in. The door is locked, the windows don&#39;t move... and you hear a sound, there&#39;s someone coming.
 
-[[Continue.-&gt;go-to-police-station3]]</tw-passagedata><tw-passagedata pid="23" name="go-to-police-station3" tags="" position="1036,1230.6666666666667" size="100,100">You find a place to hide while the guards pass, and luckily they don&#39;t notice you. But there&#39;s nothing you could do here. Unless you found the key, but this a huge leap. They will find this particular evidence, when they finish this analysis.
+[[Continue.-&gt;go-to-police-station3]]</tw-passagedata><tw-passagedata pid="23" name="go-to-police-station3" tags="" position="1036,1230" size="100,100">You find a place to hide while the guards pass, and luckily they don&#39;t notice you. But there&#39;s nothing you could do here. Unless you found the key, but this a huge leap. They will find this particular evidence, when they finish this analysis.
 
 Is there any way you can delay it? Just until you&#39;re gone?
 
@@ -433,7 +470,7 @@ You start to think about a few ideas that might help. You&#39;ll be back to them
 
 You leave the precint discreetly but wave a goodbye for the sympathetic receptionist. It may be a good thing to have a friend in this place. On the other hand, he may remember you in the future -- you may be asked what were you doing there, dangerous things like that. You hope this doesn&#39;t come to hunt you afterwards.
 
-[[Continue.-&gt;is-good-to-go]] </tw-passagedata><tw-passagedata pid="24" name="delay-police-work" tags="" position="1477.9999999999998,978.3333333333333" size="100,100">&lt;&lt;audio yay play&gt;&gt;\
+[[Continue.-&gt;is-good-to-go]] </tw-passagedata><tw-passagedata pid="24" name="delay-police-work" tags="" position="1477,978" size="100,100">&lt;&lt;audio yay play&gt;&gt;\
 &lt;&lt;set $evidences -= 1&gt;&gt;&lt;&lt;set $time_limit += 20&gt;&gt;\
 &lt;&lt;set _text to either($delay_actions)&gt;&gt;
 &lt;&lt;print _text&gt;&gt;
