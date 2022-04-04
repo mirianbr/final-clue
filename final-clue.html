@@ -344,9 +344,11 @@ You hung up the phone, a little frustrated for not being able to pick your own n
 &lt;&lt;next&gt;&gt;&lt;&lt;if $has_diamonds&gt;&gt;It&#39;s a good thing you didn&#39;t have the time to hide the diamonds yet. It was risky, but hey, nothing happened! And now you won&#39;t miss the appointment. You pick them up at your home and [[head directly to the meeting point when you receive the text.-&gt;task-sell-jewelry]]
 &lt;&lt;else&gt;&gt;[[You hurry up to get the diamonds in the storage facility before the appointment time.-&gt;task-pickup-jewelry]] 
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="PassageHeader" tags="" position="51,258" size="100,100">&lt;&lt;set $where to passage()&gt;&gt;\
-&lt;&lt;if ((Date.now() - $start_time) / 1000) gt $time_limit&gt;&gt;&lt;&lt;set $final_clue to true&gt;&gt;&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="PassageHeader" tags="" position="51,258" size="100,100">&lt;&lt;if ((Date.now() - $start_time) / 1000) gt $time_limit&gt;&gt;&lt;&lt;set $final_clue to true&gt;&gt;&lt;&lt;/if&gt;&gt;\
+&lt;&lt;set $where to passage()&gt;&gt;\
 &lt;&lt;if not $no_events_passages.includes($where)&gt;&gt;\
+&lt;div class=&quot;alert&quot;&gt;&lt;span id=&quot;items&quot;&gt;You have: &lt;&lt;if $has_diamonds is false and $has_money is false and $has_forged_docs is false and $has_ticket is false&gt;&gt;nothing.&lt;&lt;else&gt;&gt;&lt;&lt;if $has_diamonds&gt;&gt;[img[&quot;images/diamond.png&quot;]] diamonds |&lt;&lt;/if&gt;&gt;&lt;&lt;if $has_money&gt;&gt;[img[&quot;images/diamond.png&quot;]] money |&lt;&lt;/if&gt;&gt;&lt;&lt;if $has_ticket&gt;&gt;[img[&quot;images/diamond.png&quot;]] ticket |&lt;&lt;/if&gt;&gt;&lt;&lt;if $has_forged_docs&gt;&gt;[img[&quot;images/diamond.png&quot;]] new documents |&lt;&lt;/if&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;alert&quot;&gt;&lt;span id=&quot;event&quot;&gt;
 &lt;/span&gt;&lt;/div&gt;
     &lt;&lt;silently&gt;&gt;
