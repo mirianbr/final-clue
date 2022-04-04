@@ -139,7 +139,7 @@ body.preventive {
   background-size: cover;
 }
 
-a.endings { color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="TODO" color="red"></tw-tag>,<tw-tag name="ending" color="yellow"></tw-tag>,<tw-tag name="final" color="blue"></tw-tag>,<tw-tag name="jail" color="yellow"></tw-tag>,<tw-tag name="preventive" color="yellow"></tw-tag>,<tw-tag name="you-win" color="blue"></tw-tag>,<tw-tag name="youwin" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="311.6666666666667,278" size="100,100">&lt;&lt;set $has_forged_docs to false&gt;&gt;\
+a.endings { color: black; }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="TODO" color="red"></tw-tag>,<tw-tag name="ending" color="yellow"></tw-tag>,<tw-tag name="final" color="blue"></tw-tag>,<tw-tag name="jail" color="yellow"></tw-tag>,<tw-tag name="preventive" color="yellow"></tw-tag>,<tw-tag name="you-win" color="blue"></tw-tag>,<tw-tag name="youwin" color="blue"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="311.6666666666667,276.3333333333333" size="100,100">&lt;&lt;set $has_forged_docs to false&gt;&gt;\
 &lt;&lt;set $has_money to false&gt;&gt;\
 &lt;&lt;set $has_diamonds to true&gt;&gt;\
 &lt;&lt;set $has_ticket to false&gt;&gt;\
@@ -156,19 +156,19 @@ a.endings { color: black; }</style><script role="script" id="twine-user-script" 
 &lt;div align=&quot;center&quot;&gt;[img[&quot;images/puzzle-logo.png&quot;]]&lt;/div&gt;
 The art, academic and wealth circles in the city are teeming with the news: the famous exuberant (and expensive, and historical, all those things) Bonaparte diamonds are missing. 
 
-On display on a private exhibition for this week only after many disagreements over the date, place and possible invitees, the jewelry went missing in the second day of display, but no one noticed until the morning after.
+&lt;&lt;timed 2000ms t8n&gt;&gt;On display on a private exhibition for this week only after many disagreements over the date, place and possible invitees, the jewelry went missing in the second day of display, but no one noticed until the morning after.
 
-The police is already on the case, but it&#39;s hard to point just a few suspects, for many people had the means and opportunity. But we&#39;re talking respected members of society here, so things can get tricky.
+&lt;&lt;next&gt;&gt;The police is already on the case, but it&#39;s hard to point just a few suspects, for many people had the means and opportunity. But we&#39;re talking respected members of society here, so things can get tricky.
 
-But I don&#39;t need to be telling you: you know all that. 
+&lt;&lt;next&gt;&gt;But I don&#39;t need to be telling you: you know all that. &lt;&lt;next&gt;&gt;You are the one who stole the diamonds, after all. 
 
-You are the one who stole the diamonds, after all. 
+&lt;&lt;next&gt;&gt;In a whim, you could say, but you&#39;re not going back now. And you&#39;re on the run.
 
-In a whim, you could say that, but you&#39;re not going back now. And you&#39;re on the run.
-
+&lt;&lt;next&gt;&gt;\
 [[Let&#39;s go then!-&gt;prologue]]
 [[I already know the backstory... Is there any way I can skip it?-&gt;plan-next-steps2]]
-[[I&#39;m not much into detective stories, sorry. Where&#39;s the exit?-&gt;credits]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="50.33333333333333,128.33333333333331" size="100,100">&lt;&lt;cacheaudio &quot;mainsong&quot; &quot;audio/soundtrack.mp3&quot;&gt;&gt;
+[[I&#39;m not much into detective stories, sorry. Where&#39;s the exit?-&gt;credits]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="50.33333333333333,128.33333333333331" size="100,100">&lt;&lt;cacheaudio &quot;mainsong&quot; &quot;audio/soundtrack.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;badnews&quot; &quot;audio/badnews.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;gameover&quot; &quot;audio/gameover.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;youwon&quot; &quot;audio/youwon.mp3&quot;&gt;&gt;
@@ -176,7 +176,7 @@ In a whim, you could say that, but you&#39;re not going back now. And you&#39;re
 &lt;&lt;cacheaudio &quot;danger&quot; &quot;audio/danger.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;yay&quot; &quot;audio/yay.mp3&quot;&gt;&gt;
 
-&lt;&lt;set $no_events_passages = [&quot;credits&quot;, &quot;Start&quot;, &quot;prologue&quot;, &quot;prologue2&quot;, &quot;prologue3&quot;, &quot;plan-next-steps&quot;, &quot;plan-next-steps2&quot;, &quot;delay-police-work&quot;, &quot;ending-you-win-escape&quot;, &quot;ending-preventive-detection&quot;, &quot;ending-clue-found&quot;]&gt;&gt;
+&lt;&lt;set $no_events_passages = [&quot;credits&quot;, &quot;Start&quot;, &quot;prologue&quot;, &quot;prologue2&quot;, &quot;prologue3&quot;, &quot;plan-next-steps&quot;, &quot;plan-next-steps2&quot;, &quot;delay-police-work&quot;, &quot;interruption&quot;, &quot;ending-you-win-escape&quot;, &quot;ending-preventive-detection&quot;, &quot;ending-clue-found&quot;]&gt;&gt;
 
 &lt;&lt;set $good_events = [
 &quot;Intense rain is making traffic heavier, even for the police. This will slow down their investigations.&quot;, 
@@ -317,12 +317,22 @@ You didn&#39;t have much time to say anything, but what was there to say anyway?
 &lt;&lt;if not $no_events_passages.includes($where)&gt;&gt;\
 &lt;div class=&quot;alert&quot;&gt;&lt;span id=&quot;event&quot;&gt;
 &lt;/span&gt;&lt;/div&gt;
-    &lt;&lt;silently&gt;&gt;&lt;&lt;repeat &#96;random(20,45) + &#39;s&#39;&#96;&gt;&gt;
+    &lt;&lt;silently&gt;&gt;
+	&lt;&lt;set $last_sec to 10&gt;&gt;
+	&lt;&lt;repeat 1s&gt;&gt;
+	&lt;&lt;set _timediff to ((Date.now() - $start_time) / 1000)&gt;&gt;
+	&lt;&lt;if (_timediff gt 30)&gt;&gt;
+	  &lt;&lt;set _now to new Date()&gt;&gt;
+	  &lt;&lt;set _sec to _now.getSeconds()&gt;&gt;
+	  &lt;&lt;if ((_sec gte 0 and _sec lte 9) or (_sec gte 30 and _sec lte 39))&gt;&gt;
+	  &lt;&lt;if ((Math.trunc($last_sec / 30)) neq (Math.trunc(_sec / 30)))&gt;&gt;
+	    &lt;&lt;set $last_sec to _sec&gt;&gt;
 		&lt;&lt;set $random_event to either(&quot;nothing&quot;, &quot;nothing&quot;, &quot;good&quot;, &quot;bad&quot;)&gt;&gt;
 		&lt;&lt;if $random_event eq &quot;good&quot;&gt;&gt;
 		    &lt;&lt;set _text to either($good_events)&gt;&gt;
 			&lt;&lt;audio yay play&gt;&gt;
 			&lt;&lt;replace &quot;#event&quot;&gt;&gt;[img[&quot;images/thumbsup.png&quot;]] _text&lt;&lt;/replace&gt;&gt;
+		
 		&lt;&lt;elseif $random_event eq &quot;bad&quot;&gt;&gt;
 		    &lt;&lt;set _text to either($bad_events)&gt;&gt;
 			&lt;&lt;audio alert play&gt;&gt;
@@ -331,10 +341,15 @@ You didn&#39;t have much time to say anything, but what was there to say anyway?
 			&lt;&lt;audio danger play&gt;&gt;
 			&lt;&lt;set _text to _text + &quot; &lt;b&gt;The police is now real close! Try to delay them!&lt;/b&gt;&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;
 			&lt;&lt;replace &quot;#event&quot;&gt;&gt;[img[&quot;images/thumbsdown.png&quot;]]  _text&lt;&lt;/replace&gt;&gt;
+		
 		&lt;&lt;else&gt;&gt;
 			&lt;&lt;replace &quot;#event&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;
 		&lt;&lt;/if&gt;&gt;
-	&lt;&lt;/repeat&gt;&gt;&lt;&lt;/silently&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/repeat&gt;&gt;
+	&lt;&lt;/silently&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="prologue2" tags="" position="209.66666666666666,600.3333333333334" size="100,100">The mystery contact very quickly gained your trust and convinced you that it could be a good idea to do this thing. The money was good, but you would have to get a new life after that: there&#39;s no way you could hide your gains for long. And what would be the point, anyway?
 
 You have never done anything like it, but it&#39;s not like you were going to kill somebody or anything like that. And the diamonds weren&#39;t exactly in a museum, for everybody to appreciate: they were in a private collection, temporarily on display, and would be returned after that. Would it matter in which private collection they would be?
